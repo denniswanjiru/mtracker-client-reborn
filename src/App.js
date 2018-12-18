@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router, Switch, Route, Redirect,
+} from 'react-router-dom';
+
+import Signin from './components/Signin';
+import Signup from './components/Signup';
+import NotFound from './components/NotFound';
+import Requests from './components/Requests';
+import withNav from './HOC/withNav';
+import NewRequest from './components/NewRequest';
+import RequestDetail from './components/RequestDetail';
+import EditRequest from './components/EditRequest';
+import Dashboard from './components/Dashboard';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Signin} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/requests" component={withNav(Requests)} />
+          <Route exact path="/requests/new" component={withNav(NewRequest, 'fullPage')} />
+          <Route exact path="/requests/:id/edit" component={withNav(EditRequest, 'fullPage')} />
+          <Route exact path="/requests/:id" component={withNav(RequestDetail)} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
     );
   }
 }

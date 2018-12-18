@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Alex+Brush');
+
+html, body, * {
+  padding: 0;
+  margin: 0;
+  font-family: 'Titillium Web', sans-serif;
+  box-sizing: border-box;
+}
+
+.brand {
+  font-family: 'Alex Brush', cursive!important;
+}
+
+html {
+  background-color: #eff;
+}
+
+.fh {
+    height: 100vh!important;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.fullPage {
+  height: 100%;
+  display: flex;
+  height: 100vh;
+}
+
+.slogan {
+  width: 50vw;
+  background-image: linear-gradient(to right, #eff,#f1eff5);
+  display: flex;
+  flex-direction: column;
+  padding-top: 200px;
+  padding-left: calc(20vw / 2);
+  font-size: 24px;
+}
+
+.slogan > div {
+  padding-bottom: 20px
+}
+
+.form {
+  padding: 70px;
+   width: 50vw;
+}
+
+.pt {
+  padding-top: 30px;;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.dropdown-trigger {
+  position: relative;
+}
+
+.dropdown-content {
+  & .signout {
+    position: absolute;
+    top: 120px!important;
+  }
+}
