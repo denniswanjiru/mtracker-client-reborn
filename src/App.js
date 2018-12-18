@@ -20,7 +20,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Signin} />
           <Route exact path="/signup" component={Signup} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/dashboard" component={props => <Dashboard {...props} />} />
           <Route exact path="/requests" component={withNav(Requests)} />
           <Route exact path="/requests/new" component={withNav(NewRequest, 'fullPage')} />
           <Route exact path="/requests/:id/edit" component={withNav(EditRequest, 'fullPage')} />

@@ -7,7 +7,7 @@ const withNav = (WrappedComponent, type) => {
     render() {
       return (
         <React.Fragment>
-          <NavBar />
+          <NavBar {...this.props} />
           { type === 'fullPage' ? <WrappedComponent {...this.props} /> : (
             <div className="container" style={{ marginTop: '30px' }}>
               <WrappedComponent {...this.props} />

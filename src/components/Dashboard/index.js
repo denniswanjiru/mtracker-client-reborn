@@ -4,6 +4,7 @@ import './dashboard.scss';
 import Nav from './Nav';
 import Sidebar from './Sidebar';
 import api from '../../utils/api';
+import TableData from './TableData';
 
 export default class Dashboard extends Component {
   state = {
@@ -43,13 +44,14 @@ export default class Dashboard extends Component {
             {status}
           </span>
         </td>
-        <td><i className="material-icons">keyboard_arrow_down</i></td>
+        <TableData id={_id} { ...this.props } />
       </tr>
     ));
 
     return (
       <div className="page-wrapper">
         <div className="content">
+
           <Nav />
           <main className="main">
             <div className="flow-text">All requests</div>
@@ -74,7 +76,7 @@ export default class Dashboard extends Component {
             )}
           </main>
         </div>
-        <Sidebar />
+        <Sidebar {...this.props} />
       </div>
     )
   }

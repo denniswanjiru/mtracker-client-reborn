@@ -1,3 +1,3 @@
 export const getCurrentUser = () => {
-  return JSON.parse(localStorage.getItem('user'));
+  return localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : {name: null};
 }
