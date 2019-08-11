@@ -12,6 +12,7 @@ import NewRequest from './components/NewRequest';
 import RequestDetail from './components/RequestDetail';
 import EditRequest from './components/EditRequest';
 import Dashboard from './components/Dashboard';
+import Scheduler from './components/Dashboard/Scheduler';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route exact path="/" component={Signin} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/dashboard" component={props => <Dashboard {...props} />} />
+          <Route exact path="/scheduler" component={props => <Scheduler { ...props } />} />
           <Route exact path="/requests" component={withNav(Requests)} />
           <Route exact path="/requests/new" component={withNav(NewRequest, 'fullPage')} />
           <Route exact path="/requests/:id/edit" component={withNav(EditRequest, 'fullPage')} />

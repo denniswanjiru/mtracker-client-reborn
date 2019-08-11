@@ -1,3 +1,5 @@
+@import '../../../node_modules/react-big-calendar/lib/sass/styles';
+
 .page-wrapper {
   display: flex;
   height: 100%;
@@ -99,4 +101,17 @@
 
 .links .active {
   border-left: solid 4px#2692b7;
+}
+
+.schedule {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px;
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+    // height: 45px;
+  }
 }
